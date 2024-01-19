@@ -81,9 +81,9 @@ def main(batch_test=True, min_particle=10, max_particle=18):
     J_all = str_compute(args, model, train_loader, batch_test)
     print(f'The strength: {J_all}\n (Time: {(time.time() - t0) / 3600:.2f}h)')
     if args.no_pretrain:
-        torch.save([J_all, error_k], f'save/strength_{args.data}_{args.method}_n{args.n_sample}_random.pt')
+        torch.save([J_all, error_k], f'strength_{args.data}_{args.method}_n{args.n_sample}_random.pt')
     else:
-        torch.save([J_all, error_k], f'save/strength_{args.data}_{args.method}_n{args.n_sample}.pt')
+        torch.save([J_all, error_k], f'strength_{args.data}_{args.method}_n{args.n_sample}.pt')
 
 
 def select_sample(args, model, test_loader, data_x, data_pos, data_y, echo=False, min_particle=None, max_particle=None):
