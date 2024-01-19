@@ -128,6 +128,7 @@ def select_sample(args, model, test_loader, data_x, data_pos, data_y, echo=False
         # hamiltonian/newtonian体系和ISO17数据集下的原子数目是恒定不变的，所以批量计算
         train_loader = DataLoader(TensorDataset(data_x[top_k], data_pos[top_k], data_y[top_k]), batch_size=args.n_sample, shuffle=False)
     else:
+        top_k = top_k.cpu()
         train_loader = DataLoader(TensorDataset(data_x[top_k], data_pos[top_k], data_y[top_k]), batch_size=1, shuffle=False)
     return train_loader, error_k
 
