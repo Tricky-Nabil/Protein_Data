@@ -20,23 +20,23 @@ def main():
     args.bs = 512 * len(args.gpu.split(','))
     args.lr = 1e-4 * len(args.gpu.split(','))
 
-<<<<<<< HEAD
+
     # if args.data not in ['hamiltonian', 'newtonian']:
     #     #data_x, data_pos, data_y = torch.load(f'data/{args.data}.pt')
     #     data_x, data_pos, data_y = torch.load(f'/kaggle/working/Protein_Data/data/{args.data}.pt')
-=======
+
     #if args.data not in ['hamiltonian', 'newtonian']:
        # data_x, data_pos, data_y = torch.load(f'data/{args.data}.pt')
->>>>>>> a7669196306506abea431676947524fc545de987
+
     if args.data in ['qm7'] :
         data_x, data_pos, data_y = torch.load(f'/kaggle/input/qm7data/qm7.pt')
     elif args.data in ['md'] :
         data_x, data_pos, data_y = torch.load(f'/kaggle/input/thesis/md.pt')
     else:
-<<<<<<< HEAD
+
         #data_x, data_y_node, data_y_graph = torch.load(f'data/hamiltonian.pt')
-=======
->>>>>>> a7669196306506abea431676947524fc545de987
+
+
         data_x, data_y_node, data_y_graph = torch.load(f'/kaggle/input/thesis/hamiltonian.pt')
         data_x = rearrange(data_x, 'ns nt n d -> (ns nt) n d')
         if args.data == 'hamiltonian':
